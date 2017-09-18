@@ -1,4 +1,4 @@
-update=Mon 20 Mar 2017 20:07:27 GMT
+update=Mon 18 Sep 2017 21:38:24 BST
 version=1
 last_client=kicad
 [pcbnew]
@@ -59,3 +59,4 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=jumper_dual
+LibName31=switches
