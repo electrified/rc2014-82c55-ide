@@ -384,10 +384,7 @@ Text Label 7700 3200 0    60   ~ 0
 DA0
 Text Label 8950 3200 0    60   ~ 0
 DA2
-NoConn ~ 7650 2500
 NoConn ~ 7650 2800
-NoConn ~ 7650 2900
-NoConn ~ 9150 2800
 NoConn ~ 9150 3000
 NoConn ~ 9150 3100
 Text Label 7700 3400 0    60   ~ 0
@@ -660,10 +657,7 @@ Text Label 9350 3100 0    60   ~ 0
 DA1
 Text Label 10650 3200 0    60   ~ 0
 DA2
-NoConn ~ 9350 2500
 NoConn ~ 9350 2800
-NoConn ~ 9350 2900
-NoConn ~ 10850 2800
 NoConn ~ 10850 3000
 NoConn ~ 10850 3100
 Text Label 9350 3400 0    60   ~ 0
@@ -1337,4 +1331,107 @@ Text Label 8700 4900 0    60   ~ 0
 PC6
 Text Label 7950 5200 0    60   ~ 0
 PC6
+Text Label 7650 2500 0    60   ~ 0
+DMARQ
+Text Label 9350 2500 0    60   ~ 0
+DMARQ
+Text Label 7650 2900 0    60   ~ 0
+DMACK
+Text Label 9350 2900 0    60   ~ 0
+DMACK
+Text Label 8750 2800 0    60   ~ 0
+CSEL
+Text Label 10450 2800 0    60   ~ 0
+CSEL
+Text Label 8700 3650 0    60   ~ 0
+CSEL
+Wire Wire Line
+	9100 3650 8600 3650
+Wire Wire Line
+	8600 3650 8600 3800
+Connection ~ 8600 3800
+Wire Wire Line
+	7500 950  7850 950 
+$Comp
+L R R3
+U 1 1 59C99AC5
+P 8000 950
+F 0 "R3" V 8080 950 50  0000 C CNN
+F 1 "10K" V 8000 950 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 7930 950 50  0001 C CNN
+F 3 "" H 8000 950 50  0001 C CNN
+	1    8000 950 
+	0    1    1    0   
+$EndComp
+Text Label 7550 950  0    60   ~ 0
+DMARQ
+Wire Wire Line
+	8150 950  8550 950 
+$Comp
+L GND #PWR014
+U 1 1 59C99E1E
+P 8550 950
+F 0 "#PWR014" H 8550 700 50  0001 C CNN
+F 1 "GND" H 8550 800 50  0000 C CNN
+F 2 "" H 8550 950 50  0001 C CNN
+F 3 "" H 8550 950 50  0001 C CNN
+	1    8550 950 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9000 900  9350 900 
+$Comp
+L R R4
+U 1 1 59C99F79
+P 9500 900
+F 0 "R4" V 9580 900 50  0000 C CNN
+F 1 "10K" V 9500 900 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 9430 900 50  0001 C CNN
+F 3 "" H 9500 900 50  0001 C CNN
+	1    9500 900 
+	0    1    1    0   
+$EndComp
+Text Label 9050 900  0    60   ~ 0
+DMACK
+Wire Wire Line
+	9650 900  10050 900 
+$Comp
+L VCC #PWR015
+U 1 1 59C99FF3
+P 10050 900
+F 0 "#PWR015" H 10050 750 50  0001 C CNN
+F 1 "VCC" H 10050 1050 50  0000 C CNN
+F 2 "" H 10050 900 50  0001 C CNN
+F 3 "" H 10050 900 50  0001 C CNN
+	1    10050 900 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5250 1650 5600 1650
+$Comp
+L R R2
+U 1 1 59C9A0F0
+P 5750 1650
+F 0 "R2" V 5830 1650 50  0000 C CNN
+F 1 "10K" V 5750 1650 50  0000 C CNN
+F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 5680 1650 50  0001 C CNN
+F 3 "" H 5750 1650 50  0001 C CNN
+	1    5750 1650
+	0    1    1    0   
+$EndComp
+Text Label 5300 1650 0    60   ~ 0
+PA7
+Wire Wire Line
+	5900 1650 6300 1650
+$Comp
+L GND #PWR016
+U 1 1 59C9A0F8
+P 6300 1650
+F 0 "#PWR016" H 6300 1400 50  0001 C CNN
+F 1 "GND" H 6300 1500 50  0000 C CNN
+F 2 "" H 6300 1650 50  0001 C CNN
+F 3 "" H 6300 1650 50  0001 C CNN
+	1    6300 1650
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
