@@ -30,7 +30,7 @@ PPIDETRACE      .EQU    1
 PPIDE8BIT       .EQU    FALSE    
 ```
 
-This is the configuration mode for the DiskIO v3, and it expects the board to be at I/O address 0x20, so set the A6 switch "on" and all the others off.
+This is the configuration mode for the DiskIO v3, and it expects the board to be at I/O address 0x20, so set the A5 switch "on" and all the others off.
 
 ## Getting started with z88dk
 Support has only recently landed  so you'll need a very recent pull of z88dk.
