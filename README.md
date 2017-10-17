@@ -1,5 +1,7 @@
 # 82c55 based IDE interface for the RC2014 computer
 
+![Picture of the board](./board.jpg?raw=true)
+
 ## The board
 This is a 82c55 based IDE interface for the RC2014 Z80 8-bit computer. IDE uses a 16 bit data bus, so you need some kind of parallel interface to connect to an 8 bit computer.
 Uses the same pin mapping as the ECB Disk IO v3 and design heavily cribbed from that. (https://www.retrobrewcomputers.org/lib/exe/fetch.php?media=boards:ecb:diskio-v3:ecb_diskio_v3_-_schematics_-_color_1.0.pdf)
