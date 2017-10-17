@@ -6,6 +6,14 @@ Uses the same pin mapping as the ECB Disk IO v3 and design heavily cribbed from 
 
 ## What can you use this for?
 
+* Connecting an IDE hard drive to your RC2014 ;) and using it in RomWBW or in C programs built with z88dk.
+
+## Features
+
+* 40 pin IDE for normal 3.5" hard drives
+* 44 pin IDE header for 2.5" laptop hard drives
+* Pins for supplying external 5v for the laptop HD if necessary
+* IO port selectable via DIP switch
 Connecting an IDE hard drive to your RC2014 ;) and using it in RomWBW or in programs built with z88dk.
 
 ## Getting started with RomWBW
