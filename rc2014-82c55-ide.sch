@@ -39,8 +39,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "RC2014 82c55 IDE Interface"
-Date "2017-09-11"
-Rev "1"
+Date "2017-10-18"
+Rev "2"
 Comp "Ed Brindley"
 Comment1 ""
 Comment2 ""
@@ -433,7 +433,7 @@ U 1 1 59B6F9C7
 P 6150 2200
 F 0 "D1" H 6150 2300 50  0000 C CNN
 F 1 "LED" H 6150 2100 50  0000 C CNN
-F 2 "LEDs:LED_D1.8mm_W3.3mm_H2.4mm" H 6150 2200 50  0001 C CNN
+F 2 "LEDs:LED_D3.0mm" H 6150 2200 50  0001 C CNN
 F 3 "" H 6150 2200 50  0001 C CNN
 	1    6150 2200
 	1    0    0    -1  
@@ -719,20 +719,18 @@ $EndComp
 Text Label 7100 5150 0    60   ~ 0
 DA2
 $Comp
-L CONN_01X03 J5
+L Conn_01x02 J5
 U 1 1 59C1C7A5
-P 7250 6150
-F 0 "J5" H 7250 6350 50  0000 C CNN
-F 1 "CONN_01X03" V 7350 6150 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm" H 7250 6150 50  0001 C CNN
-F 3 "" H 7250 6150 50  0001 C CNN
-	1    7250 6150
+P 7250 6050
+F 0 "J5" H 7250 6250 50  0000 C CNN
+F 1 "IDE power from bus" H 7150 5800 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 7250 6050 50  0001 C CNN
+F 3 "" H 7250 6050 50  0001 C CNN
+	1    7250 6050
 	1    0    0    -1  
 $EndComp
 Text Label 6800 6150 0    60   ~ 0
 IDE_VCC
-Text Label 6800 6250 0    60   ~ 0
-EXT_VCC
 $Comp
 L VCC #PWR012
 U 1 1 59C1C979
@@ -749,14 +747,12 @@ L CONN_01X02 J1
 U 1 1 59C1C9D2
 P 8200 6000
 F 0 "J1" H 8200 6150 50  0000 C CNN
-F 1 "CONN_01X02" V 8300 6000 50  0000 C CNN
+F 1 "External power" H 8200 5800 50  0000 C CNN
 F 2 "Connectors:PINHEAD1-2" H 8200 6000 50  0001 C CNN
 F 3 "" H 8200 6000 50  0001 C CNN
 	1    8200 6000
 	1    0    0    -1  
 $EndComp
-Text Label 7750 5950 0    60   ~ 0
-EXT_VCC
 Text Label 9350 3500 0    60   ~ 0
 IDE_VCC
 Text Label 10500 3500 0    60   ~ 0
@@ -1225,8 +1221,6 @@ Wire Wire Line
 Wire Wire Line
 	7050 6150 6800 6150
 Wire Wire Line
-	7050 6250 6800 6250
-Wire Wire Line
 	8000 5950 7750 5950
 Wire Wire Line
 	8000 6050 7750 6050
@@ -1434,4 +1428,6 @@ F 3 "" H 4600 6050 50  0001 C CNN
 	1    4600 6050
 	1    0    0    -1  
 $EndComp
+Text Label 7750 5950 0    60   ~ 0
+IDE_VCC
 $EndSCHEMATC
