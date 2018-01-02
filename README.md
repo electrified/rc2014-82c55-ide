@@ -16,12 +16,21 @@ Uses the same pin mapping as the ECB Disk IO v3 and design heavily cribbed from 
 * 44 pin IDE header for 2.5" laptop hard drives
 * Pins for supplying external 5v for the laptop HD if necessary
 * IO port selectable via DIP switch
-Connecting an IDE hard drive to your RC2014 ;) and using it in RomWBW or in programs built with z88dk.
 
 ## Getting started with RomWBW
-You'll need to rebuild RomWBW with PPIDE support, by enabling the following configuration:
+Wayne Warthen has incorporated support for the RC2014 into [mainline RomWBW](https://github.com/wwarthen/RomWBW). Using this is preferred to Scott Baker's fork as there have been various improvements since Scott forked off. Support for the IDE adapter can be enabled by setting the following configuration and rebuilding:
 
-If you're using Scott Baker's fork of RomWBW, the easiest thing to do is modify those settings in ```/Source/HBIOS/Config/plt_smb.asm```
+```
+PPIDEENABLE     .EQU    TRUE    
+PPIDEMODE       .EQU    PPIDEMODE_RC  
+PPIDETRACE      .EQU    1              
+PPIDE8BIT       .EQU    FALSE    
+```
+
+The board I/O address snould be set to 0x20; set the A5 switch "on" and all the others off.
+
+### Scott Baker's RomWBW fork
+If you're using Scott's fork of RomWBW, the easiest thing to do is modify those settings in ```/Source/HBIOS/Config/plt_smb.asm```
 
 ```
 PPIDEENABLE     .EQU    TRUE    
@@ -30,7 +39,9 @@ PPIDETRACE      .EQU    1
 PPIDE8BIT       .EQU    FALSE    
 ```
 
-This is the configuration mode for the DiskIO v3, and it expects the board to be at I/O address 0x20, so set the A5 switch "on" and all the others off.
+This is the configuration mode for the DiskIO v3, and again it expects the I/O address to be set to 0x20
+
+Note that there is a bug in the PPIDE support in this version, meaning real IDE hard drives (not CompactFlash devices) may not be detected. This has been fixed in mainline RomWBW (see https://github.com/wwarthen/RomWBW/issues/2). If you are experiencing this problem, commenting out https://github.com/sbelectronics/RomWBW/blob/master/Source/HBIOS/ppide.asm#L1008 "CALL	PPIDE_SETFEAT" should fix it, however using mainline RomWBW is preferred.
 
 ## Getting started with z88dk
 Support has only recently landed  so you'll need a very recent pull of z88dk.
@@ -98,7 +109,7 @@ R2|10K through hole resistor
 ## Construction tips
 * Pin 20 of both the 40 pin and 44 pin IDE connector is usually missing as a "key" and is blocked off on many cables. It's best to remove pin 20 from both connectors before soldering them.
 * If you're using a 2.5" and powering it from the bus, ensure you have a sufficient power supply. As an example, my 2.5" Seagate Momentum drive is specced to pull up to 2.5A on startup
-* If you are using the board as an IDE contoller, keep the JP1-4 in their default position of 2-3
+* If you are using the board as an IDE controller, keep the JP1-4 in their default position of 2-3
 * The cutout on the boxed IDE connectors should be towards the RC2014 bus connector in the case of the 44 pin connector, and facing the user in the case of the 40 pin connector.
 
 
