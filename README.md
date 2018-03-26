@@ -3,12 +3,12 @@
 ![Picture of the board](./board_r2.jpg?raw=true)
 
 ## The board
-This is a 82c55 based IDE interface for the RC2014 Z80 8-bit computer. IDE uses a 16 bit data bus, so you need some kind of parallel interface to connect to an 8 bit computer.
-Uses the same pin mapping as the ECB Disk IO v3 and design heavily cribbed from that. (https://www.retrobrewcomputers.org/lib/exe/fetch.php?media=boards:ecb:diskio-v3:ecb_diskio_v3_-_schematics_-_color_1.0.pdf)
+This is a 82c55 based IDE interface for the RC2014 Z80 8-bit computer. IDE uses a 16 bit data bus, so a parallel interface IC is needed to connect one to an 8 bit computer.
+This adapter uses the same pin mapping as the ECB Disk IO v3 and the design is heavily based on that. (https://www.retrobrewcomputers.org/lib/exe/fetch.php?media=boards:ecb:diskio-v3:ecb_diskio_v3_-_schematics_-_color_1.0.pdf)
 
 ## What can you use this for?
 
-* Connecting an IDE hard drive to your RC2014 ;) and using it in RomWBW or in C programs built with z88dk.
+* Connecting an IDE hard drive to your RC2014 and using it in RomWBW, CP/M-IDE or in C programs built with z88dk.
 
 ## Features
 
@@ -24,40 +24,31 @@ Wayne Warthen has incorporated support for the RC2014 into [mainline RomWBW](htt
 PPIDEENABLE     .EQU    TRUE
 ```
 
-Read the RomWBW readme (`Source/ReadMe.txt`) if you are unfamiliar with the process of creating your own configuration file/ building etc.
+Read the RomWBW readme (`Source/ReadMe.txt`) if you are unfamiliar with the configuration and build process.
 
 The other settings have already been set to the appropriate values in `Source/HBIOS/cfg_rc.asm`, so all is required is to enable PPIDE.
 
 The board I/O address should be set to 0x20; set the A5 switch "on" and all the others off.
 
-### Scott Baker's RomWBW fork
-If you're using Scott's fork of RomWBW, the easiest thing to do is modify those settings in ```/Source/HBIOS/Config/plt_smb.asm```
-
-```
-PPIDEENABLE     .EQU    TRUE    
-PPIDEMODE       .EQU    PPIDEMODE_DIO3  
-PPIDETRACE      .EQU    1              
-PPIDE8BIT       .EQU    FALSE    
-```
-
-This is the configuration mode for the DiskIO v3, and again it expects the I/O address to be set to 0x20
-
-Note that there is a bug in the PPIDE support in this version, meaning real IDE hard drives (not CompactFlash devices) may not be detected. This has been fixed in mainline RomWBW (see https://github.com/wwarthen/RomWBW/issues/2). If you are experiencing this problem, commenting out https://github.com/sbelectronics/RomWBW/blob/master/Source/HBIOS/ppide.asm#L1008 "CALL	PPIDE_SETFEAT" should fix it, however using mainline RomWBW is preferred.
-
 ## Getting started with z88dk
-Support has only recently landed  so you'll need a very recent pull of z88dk.
+Support has only recently landed so you'll need a very recent pull of z88dk.
 The 82c55 driver, IDE layer and DiskIO are only present within z88dk's RC2014 newlib target. (Not the classic library). 
 
 Phillip Stevens has packaged ChaN's FatFS as a z88dk library, this can be used with above z88dk IDE driver to write programs that can access FAT filesystems.
 
-See https://github.com/feilipu/z88dk-libraries/tree/master/ff, and the programs in the example directory.
+See https://github.com/feilipu/z88dk-libraries/tree/master/ff and the programs in the example directory.
 
-## Jumpers
+## CP/M - IDE
+Phillip Stevens has made a CP/M version where the CP/M disk images can reside on a FAT filesystem. This requires only a minimal RC2014 setup. See [the GitHub repository](https://github.com/RC2014Z80/RC2014/tree/master/ROMs/CPM-IDE) and [Google groups thread](https://groups.google.com/forum/#!topic/rc2014-z80/V07eugtGFZo) for more details.
 
+## Jumpers and switches
 Pin 1 is identified by having square pad.
 
+### SW1
+IO address of the board. For operation at 0x20 as RomWBW expects, set the switch marked A5 / 20 to on and all the others to off.
+
 ### JP1 - JP4
-Described on the back of the board. Basically some of the pins in the 82c55 C port have special purpose if you are using the board in mode 2 for something other than being an IDE adapter. Usually you'd just pick the defaults of pin 1-2.
+Described on the back of the board. Some of the pins in the 82c55 C port have a special purpose if you are using the board in mode 2, for something other than being an IDE adapter. Usually the defaults of pins 2-3 are correct.
 
 ### JP5
 Use external power from J1. Rev 2 of the board only has 2 pins, jumper for bus power.
@@ -107,4 +98,5 @@ R2|10K through hole resistor|||CF14JT10K0CT-ND|
 * If you are using the board as an IDE controller, keep the JP1-4 in their default position of 2-3
 * The cutout on the boxed IDE connectors should be towards the RC2014 bus connector in the case of the 44 pin connector, and facing the user in the case of the 40 pin connector.
 
-
+## Compatibility
+The IDE board will not work if the Digital IO v1.0 board is present in your RC2014. This is due to the IO board having very loose addressing - it responds on any IO address below 128 ending with binary 00, 01 or 10. This results in it conflicitng with the IDE adapter.
