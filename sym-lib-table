@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "rc2014-82c55-ide-rescue")(type "Legacy")(uri "${KIPRJMOD}/rc2014-82c55-ide-rescue.lib")(options "")(descr ""))
+)
