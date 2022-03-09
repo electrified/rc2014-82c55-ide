@@ -1,4 +1,4 @@
-20041413596020535
+20069902821141060
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -85301,3 +85301,136 @@ varistor SIOV
 0
 2
 2
+rc2014
+40tex600
+Support TEXTOOL Dil 40 pins, pads ronds, e=600 mils
+DEV
+0
+40
+40
+rc2014
+CP_Radial_D5.0mm_P2.50mm
+CP, Radial series, Radial, pin pitch=2.50mm, , diameter=5mm, Electrolytic Capacitor
+CP Radial series Radial pin pitch 2.50mm  diameter 5mm Electrolytic Capacitor
+0
+2
+2
+rc2014
+CP_Radial_D6.3mm_P2.50mm
+CP, Radial series, Radial, pin pitch=2.50mm, , diameter=6.3mm, Electrolytic Capacitor
+CP Radial series Radial pin pitch 2.50mm  diameter 6.3mm Electrolytic Capacitor
+0
+2
+2
+rc2014
+C_Disc_D3.8mm_W2.6mm_P2.50mm
+C, Disc series, Radial, pin pitch=2.50mm, , diameter*width=3.8*2.6mm^2, Capacitor, http://www.vishay.com/docs/45233/krseries.pdf
+C Disc series Radial pin pitch 2.50mm  diameter 3.8mm width 2.6mm Capacitor
+0
+2
+2
+rc2014
+DIP-14_W7.62mm_Socket
+14-lead dip package, row spacing 7.62 mm (300 mils), Socket
+DIL DIP PDIP 2.54mm 7.62mm 300mil Socket
+0
+14
+14
+rc2014
+DIP-16_W7.62mm_Socket
+16-lead dip package, row spacing 7.62 mm (300 mils), Socket
+DIL DIP PDIP 2.54mm 7.62mm 300mil Socket
+0
+16
+16
+rc2014
+DIP-40_W15.24mm_Socket
+40-lead dip package, row spacing 15.24 mm (600 mils), Socket
+DIL DIP PDIP 2.54mm 15.24mm 600mil Socket
+0
+40
+40
+rc2014
+Pin_Header_Straight_1x02_Pitch2.54mm
+Through hole straight pin header, 1x02, 2.54mm pitch, single row
+Through hole pin header THT 1x02 2.54mm single row
+0
+2
+2
+rc2014
+Pin_Header_Straight_1x03_Pitch2.54mm
+Through hole straight pin header, 1x03, 2.54mm pitch, single row
+Through hole pin header THT 1x03 2.54mm single row
+0
+3
+3
+rc2014
+Pin_Header_Straight_1x39_Pitch2.54mm_NoSilk
+Through hole straight pin header, 1x39, 2.54mm pitch, single row
+Through hole pin header THT 1x39 2.54mm single row
+0
+39
+39
+rc2014
+Pin_Header_Straight_2x03_Pitch2.54mm
+Through hole straight pin header, 2x03, 2.54mm pitch, double rows
+Through hole pin header THT 2x03 2.54mm double row
+0
+6
+6
+rc2014
+Pin_Header_Straight_2x08_Pitch2.54mm
+Through hole straight pin header, 2x08, 2.54mm pitch, double rows
+Through hole pin header THT 2x08 2.54mm double row
+0
+16
+16
+rc2014
+Pin_Header_Straight_2x09_Pitch2.54mm
+Through hole straight pin header, 2x09, 2.54mm pitch, double rows
+Through hole pin header THT 2x09 2.54mm double row
+0
+18
+18
+rc2014
+R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal
+Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf
+Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm
+0
+2
+2
+rc2014
+cliff_fcr1295_socket
+
+
+0
+6
+6
+rc2014
+ed
+
+
+0
+0
+0
+rc2014
+logo_text
+
+
+0
+0
+0
+rc2014
+rev5
+
+
+0
+0
+0
+rc2014
+speaker
+
+
+0
+0
+0
